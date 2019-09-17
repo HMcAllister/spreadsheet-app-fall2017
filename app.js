@@ -102,9 +102,9 @@ let mouseButtonPressed = (event, index) => {
  * @todo BE SURE TO DOCUMENT EACH FUNCTION IN JSDOC FORMAT (USE BELOW AS REFERENCE AND SEE: http://usejsdoc.org/)
  */
 Let convertToLarger = (x, y) => Math.trunc(x/y);
-Let msToTotalSeconds = (x, 10) => convertToLarger(x, 10);
-Let msToTotalMinutes = (x, 10, 60) => convertToLarger(msToTotalSeconds(x, 10), 60);
-Let msToTotalHours = (x, 10, 60) => convertToLarger(msToTotalMinutes(x, 10, 60), 60);
+Let msToTotalSeconds = (x) => convertToLarger(x, 1000);
+Let msToTotalMinutes = (x) => convertToLarger(msToTotalSeconds(x), 60);
+Let msToTotalHours = (x) => convertToLarger(msToTotalMinutes(x), 60);
 Let remainingAfterConvert = () => (x-convertToLarger)
 /**
  * Given a number of milliseconds from midnight, returns the second (0 to 60) for the displayed time
